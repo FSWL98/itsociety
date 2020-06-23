@@ -1,0 +1,30 @@
+.selector-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: stretch;
+  border-bottom: 1px solid #6227b7;
+}
+
+.case-item {
+  flex: 1 1 200px;
+  padding: 10px;
+  cursor: pointer;
+  color: black;
+  text-transform: uppercase;
+  font-weight: bolder;
+  text-decoration: none;
+}
+
+.case-item.active {
+  border-bottom: 3px solid #6227b7;
+  color: #6227b7;
+}
+
+.case-selector {
+  color: #6227b7;
+  border-color: #eee;
+  background-color: #eee;
+  width: 100%;
+  padding: 12px 20px;
+  font-weight: bold;
+}
