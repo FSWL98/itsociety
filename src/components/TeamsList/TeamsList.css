@@ -91,6 +91,7 @@
   flex-wrap: wrap;
   justify-content: left;
   flex-grow: 1;
+  flex-basis: 250px;
 }
 
 .team-list_item__member {
@@ -131,8 +132,15 @@
   .name {
     font-size: 14px;
   }
+  .team-list_item__place {
+    margin-top: 20px;
+  }
   .team {
     font-size: 12px;
+  }
+  .team-list_item {
+    padding-top: 20px;
+    flex-wrap: wrap;
   }
   .team-list_item__team-name {
     font-size: 14px;
@@ -142,6 +150,10 @@
   }
   .city {
     font-size: 10px;
+  }
+  .team-list_item__members-wrapper {
+    margin-left: 60px;
+    margin-top: 20px;
   }
   .team-list_item__member {
     flex-basis: 90px;

@@ -27,4 +27,19 @@
   width: 100%;
   padding: 12px 20px;
   font-weight: bold;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.select-wrapper:after {
+  content: url(../../images/selectArrow.svg);
+  color: black;
+  width: 10px;
+  position: absolute;
+  top: 0.7em;
+  right: 40px;
+  height: 8px;
+  filter: invert(22%) sepia(37%) saturate(7192%) hue-rotate(259deg) brightness(72%) contrast(98%);
+  pointer-events: none;
 }

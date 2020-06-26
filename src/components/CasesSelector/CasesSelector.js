@@ -3,7 +3,7 @@ import { cases } from '../../consts/cases';
 import './CasesSelector.css';
 
 export const CasesSelector = (props) => {
-    return props.size === 'big' ? (
+    return document.body.clientWidth > 800 ? (
             <div className='selector-wrapper'>
                 {cases.map((el) => (
                     <div
@@ -17,10 +17,12 @@ export const CasesSelector = (props) => {
             </div>
         ) :
         (
+            <div className='select-wrapper'>
             <select value={props.active} onChange={props.handleSelectorChange} className='case-selector'>
                 {cases.map((el) => (
                     <option value={el.id} key={el.id} className='case-option'>Кейс #{el.id} | {el.owner}</option>
                 ))}
             </select>
+            </div>
         );
 };

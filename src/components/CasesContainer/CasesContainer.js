@@ -8,9 +8,7 @@ import { Fade } from 'react-reveal';
 
 export const CasesContainer = (props) => {
     const [currentCase, setCurrentCase] = useState(parseInt(props.match.params.id));
-    const [windowWidth, setWindowWidth] = useState(document.body.clientWidth);
     const [useFade, setUseFade] = useState(true);
-    const selectorSize = windowWidth > 800 ? 'big' : 'small';
 
     const history = useHistory();
 
@@ -28,25 +26,32 @@ export const CasesContainer = (props) => {
         history.push(`/cases/${ev.target.value}`);
     };
 
-    const handleWidthChange = () => {
-        setWindowWidth(document.body.clientWidth);
+    const handleButtonClick = () => {
+        history.push(`/cases/${currentCase}/teams`);
+    };
+
+    const rerender = () => {
+        setUseFade(false);
+        setTimeout(() => setUseFade(true), 100);
     };
 
     useEffect(() => {
-       window.addEventListener('resize', handleWidthChange);
+       window.addEventListener('resize', rerender);
+       return () => {
+           window.removeEventListener('resize', rerender);
+       }
     });
 
     return (
         <div className='cases-container'>
             <CasesSelector
-                size={selectorSize}
                 active={currentCase}
                 handleChange={handleCaseChange}
                 handleSelectorChange={handleSelectorChange}
             />
             <Fade>
                 <Fade when={useFade}>
-                    <CaseCard case={cases[currentCase - 1]}/>
+                    <CaseCard case={cases[currentCase - 1]} handleButtonClick={handleButtonClick}/>
                 </Fade>
             </Fade>
         </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import { teams } from '../../consts/teams';
 import { cases } from '../../consts/cases';
 import { Link } from 'react-router-dom';
-import back from '../TeamsList/back.svg';
+import back from '../../images/back.svg';
 import './TeamsList.css';
 import { Fade } from 'react-reveal';
 
